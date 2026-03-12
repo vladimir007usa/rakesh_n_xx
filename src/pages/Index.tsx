@@ -20,15 +20,22 @@ const Index = () => {
   return (
     <>
       <AnimatedLoader onComplete={handleLoaderComplete} />
+
       {!isLoading && (
         <>
           <CustomCursor />
           <Navbar />
+
           <main>
             <HeroSection />
             <AboutSection />
-            <SkillsSection />
+
+            {/* 🔥 PROJECTS moved UP */}
             <ProjectsSection />
+
+            {/* 🔥 SKILLS moved DOWN */}
+            <SkillsSection />
+
             <EducationSection />
             <ContactSection />
             <FooterSection />

@@ -22,10 +22,10 @@ const FooterSection = () => {
             </a>
           </div>
           <p className="text-xs text-muted-foreground">
-            © 2025 Rakesh Naskar. All rights reserved.
+            © 2026 Rakesh Naskar. All rights reserved.
           </p>
           <p className="text-xs font-mono text-muted-foreground/50">
-            Built with React + TailwindCSS
+            
           </p>
         </div>
       </div>
