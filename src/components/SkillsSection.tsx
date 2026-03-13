@@ -77,48 +77,56 @@ const techStack = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="relative min-h-screen">
-      <WavyBackground
-        backgroundFill="hsl(230 25% 3%)"
-        blur={14}
-        speed="slow"
-        waveOpacity={0.2}
-        // Removed fixed height constraints, ensuring full height visibility
-        containerClassName="py-20 sm:py-32 flex flex-col items-center"
-        colors={["#22d3ee", "#6366f1", "#0ea5e9"]}
-      >
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
-          {/* TITLE */}
-          <ScrollReveal>
-            <h2 className="text-center text-4xl sm:text-5xl font-bold mb-12 sm:mb-16 text-white">
-              Tech Stack
-            </h2>
-          </ScrollReveal>
+    <section id="skills" className="relative min-h-screen w-full flex flex-col items-center justify-center">
+      {/* 1. WE MOVE THE WAVY BACKGROUND TO BE AN ABSOLUTE FILLER 
+          This ensures the waves cover the whole section regardless of how long the skill list gets.
+      */}
+      <div className="absolute inset-0 z-0">
+        <WavyBackground
+          backgroundFill="hsl(230 25% 3%)"
+          blur={14}
+          speed="slow"
+          waveOpacity={0.2}
+          containerClassName="h-full w-full"
+          colors={["#22d3ee", "#6366f1", "#0ea5e9"]}
+        />
+      </div>
 
-          {/* STACK - Enhanced for mobile responsiveness */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
-            {techStack.map((tech, i) => (
-              <ScrollReveal key={tech.name} delay={i * 0.02}>
-                <div
-                  className="flex items-center gap-2 sm:gap-3 px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl
-                  bg-black/40 border border-white/10 backdrop-blur-md
-                  hover:border-cyan-400/40 hover:bg-black/60
-                  transition-all duration-300 group"
-                >
-                  <tech.icon
-                    className={`text-xl sm:text-2xl ${tech.color}
-                    group-hover:scale-110 transition-transform`}
-                  />
+      {/* 2. CONTENT CONTAINER 
+          Using relative z-10 ensures the skills sit on top of the waves.
+          Adding 'pb-20' ensures there's room at the bottom on mobile.
+      */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-24 sm:py-32">
+        {/* TITLE */}
+        <ScrollReveal>
+          <h2 className="text-center text-4xl sm:text-5xl font-bold mb-16 text-white drop-shadow-md">
+            Tech Stack
+          </h2>
+        </ScrollReveal>
 
-                  <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white whitespace-nowrap">
-                    {tech.name}
-                  </span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+        {/* STACK */}
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
+          {techStack.map((tech, i) => (
+            <ScrollReveal key={tech.name} delay={i * 0.01}>
+              <div
+                className="flex items-center gap-2 sm:gap-3 px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl
+                bg-black/60 border border-white/10 backdrop-blur-xl
+                hover:border-cyan-400/60 hover:bg-black/80
+                transition-all duration-300 group shadow-lg"
+              >
+                <tech.icon
+                  className={`text-xl sm:text-2xl ${tech.color}
+                  group-hover:scale-110 transition-transform`}
+                />
+
+                <span className="text-xs sm:text-sm text-gray-200 group-hover:text-white font-medium tracking-wide whitespace-nowrap">
+                  {tech.name}
+                </span>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
-      </WavyBackground>
+      </div>
     </section>
   );
 };
