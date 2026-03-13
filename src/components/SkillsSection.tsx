@@ -17,7 +17,6 @@ import { FaShieldAlt, FaLinux, FaWindows, FaApple } from "react-icons/fa";
 import { TbBrandOffice } from "react-icons/tb";
 
 const techStack = [
-
   // 🌐 Frontend
   { name: "HTML", icon: SiHtml5, color: "text-orange-500" },
   { name: "CSS", icon: SiCss3, color: "text-blue-500" },
@@ -78,50 +77,46 @@ const techStack = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="relative">
-
+    <section id="skills" className="relative min-h-screen">
       <WavyBackground
         backgroundFill="hsl(230 25% 3%)"
         blur={14}
         speed="slow"
         waveOpacity={0.2}
-        containerClassName="py-24 sm:py-32"
+        // Removed fixed height constraints, ensuring full height visibility
+        containerClassName="py-20 sm:py-32 flex flex-col items-center"
         colors={["#22d3ee", "#6366f1", "#0ea5e9"]}
       >
-        <div className="max-w-6xl mx-auto px-6">
-
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6">
           {/* TITLE */}
           <ScrollReveal>
-            <h2 className="text-center text-4xl sm:text-5xl font-bold mb-16 text-white">
+            <h2 className="text-center text-4xl sm:text-5xl font-bold mb-12 sm:mb-16 text-white">
               Tech Stack
             </h2>
           </ScrollReveal>
 
-          {/* STACK */}
-          <div className="flex flex-wrap justify-center gap-5">
-
+          {/* STACK - Enhanced for mobile responsiveness */}
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
             {techStack.map((tech, i) => (
-              <ScrollReveal key={tech.name} delay={i * 0.03}>
+              <ScrollReveal key={tech.name} delay={i * 0.02}>
                 <div
-                  className="flex items-center gap-3 px-6 py-4 rounded-2xl
+                  className="flex items-center gap-2 sm:gap-3 px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl
                   bg-black/40 border border-white/10 backdrop-blur-md
                   hover:border-cyan-400/40 hover:bg-black/60
                   transition-all duration-300 group"
                 >
                   <tech.icon
-                    className={`text-2xl ${tech.color}
+                    className={`text-xl sm:text-2xl ${tech.color}
                     group-hover:scale-110 transition-transform`}
                   />
 
-                  <span className="text-sm text-gray-300 group-hover:text-white">
+                  <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white whitespace-nowrap">
                     {tech.name}
                   </span>
                 </div>
               </ScrollReveal>
             ))}
-
           </div>
-
         </div>
       </WavyBackground>
     </section>
