@@ -41,20 +41,20 @@ const HeroSection = () => {
 
               {/* Glowing Gradient Title */}
               <motion.h2
-                className="text-lg sm:text-xl font-bold mb-6 max-w-xl leading-relaxed text-center lg:text-left drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] hover:drop-shadow-[0_0_25px_rgba(236,72,153,0.7)] transition-all duration-500 cursor-default"
+                className="text-lg sm:text-xl font-bold mb-6 max-w-full leading-relaxed text-center lg:text-left drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] hover:drop-shadow-[0_0_25px_rgba(236,72,153,0.7)] transition-all duration-500 cursor-default"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-rose-500">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-rose-500 whitespace-nowrap">
                   Web Developer
                 </span>
-                <span className="text-fuchsia-400 mx-2 font-black opacity-60">•</span>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-rose-500">
+                <span className="text-fuchsia-400 mx-2 sm:mx-3 font-black opacity-60">•</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-rose-500 whitespace-nowrap">
                   Adobe Designer
                 </span>
-                <span className="text-fuchsia-400 mx-2 font-black opacity-60 hidden sm:inline">•</span>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-rose-500 block sm:inline mt-1 sm:mt-0">
+                <span className="text-fuchsia-400 mx-2 sm:mx-3 font-black opacity-60">•</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-rose-500 whitespace-nowrap">
                   Cybersecurity Professional
                 </span>
               </motion.h2>
