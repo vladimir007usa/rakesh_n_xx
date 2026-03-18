@@ -39,47 +39,25 @@ const HeroSection = () => {
                 <NameLens />
               </motion.h1>
 
-              {/* Title */}
-              <motion.div
-                className="text-lg sm:text-xl font-bold mb-6 max-w-xl leading-relaxed flex flex-wrap items-center justify-center lg:justify-start gap-y-2"
+              {/* Glowing Gradient Title */}
+              <motion.h2
+                className="text-lg sm:text-xl font-bold mb-6 max-w-xl leading-relaxed text-center lg:text-left drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] hover:drop-shadow-[0_0_25px_rgba(236,72,153,0.7)] transition-all duration-500 cursor-default"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                {/* Web Developer */}
-                <span className="relative inline-block group cursor-default">
-                  <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 blur-md opacity-50 bg-clip-text text-transparent group-hover:opacity-100 transition-opacity duration-500">
-                    Web Developer
-                  </span>
-                  <span className="relative bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
-                    Web Developer
-                  </span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-rose-500">
+                  Web Developer
                 </span>
-
-                <span className="text-cyan-400/50 mx-3 select-none">•</span>
-
-                {/* Adobe Designer */}
-                <span className="relative inline-block group cursor-default">
-                  <span className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-500 blur-md opacity-50 bg-clip-text text-transparent group-hover:opacity-100 transition-opacity duration-500">
-                    Adobe Designer
-                  </span>
-                  <span className="relative bg-gradient-to-r from-purple-300 to-pink-400 bg-clip-text text-transparent">
-                    Adobe Designer
-                  </span>
+                <span className="text-fuchsia-400 mx-2 font-black opacity-60">•</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-rose-500">
+                  Adobe Designer
                 </span>
-
-                <span className="text-cyan-400/50 mx-3 select-none hidden sm:inline">•</span>
-
-                {/* Cybersecurity Professional */}
-                <span className="relative inline-block group cursor-default">
-                  <span className="absolute inset-0 bg-gradient-to-r from-rose-400 to-orange-500 blur-md opacity-50 bg-clip-text text-transparent group-hover:opacity-100 transition-opacity duration-500">
-                    Cybersecurity Professional
-                  </span>
-                  <span className="relative bg-gradient-to-r from-rose-300 to-orange-400 bg-clip-text text-transparent">
-                    Cybersecurity Professional
-                  </span>
+                <span className="text-fuchsia-400 mx-2 font-black opacity-60 hidden sm:inline">•</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-rose-500 block sm:inline mt-1 sm:mt-0">
+                  Cybersecurity Professional
                 </span>
-              </motion.div>
+              </motion.h2>
 
               {/* Tagline */}
               <motion.p
