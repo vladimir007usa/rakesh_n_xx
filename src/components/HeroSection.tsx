@@ -40,15 +40,46 @@ const HeroSection = () => {
               </motion.h1>
 
               {/* Title */}
-              <motion.p
-                className="text-lg sm:text-xl text-slate-300 mb-4 max-w-xl"
+              <motion.div
+                className="text-lg sm:text-xl font-bold mb-6 max-w-xl leading-relaxed flex flex-wrap items-center justify-center lg:justify-start gap-y-2"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                Web Developer <span className="text-cyan-400/50">•</span> Adobe Designer{" "}
-                <span className="text-cyan-400/50">•</span> Cybersecurity Professional
-              </motion.p>
+                {/* Web Developer */}
+                <span className="relative inline-block group cursor-default">
+                  <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 blur-md opacity-50 bg-clip-text text-transparent group-hover:opacity-100 transition-opacity duration-500">
+                    Web Developer
+                  </span>
+                  <span className="relative bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                    Web Developer
+                  </span>
+                </span>
+
+                <span className="text-cyan-400/50 mx-3 select-none">•</span>
+
+                {/* Adobe Designer */}
+                <span className="relative inline-block group cursor-default">
+                  <span className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-500 blur-md opacity-50 bg-clip-text text-transparent group-hover:opacity-100 transition-opacity duration-500">
+                    Adobe Designer
+                  </span>
+                  <span className="relative bg-gradient-to-r from-purple-300 to-pink-400 bg-clip-text text-transparent">
+                    Adobe Designer
+                  </span>
+                </span>
+
+                <span className="text-cyan-400/50 mx-3 select-none hidden sm:inline">•</span>
+
+                {/* Cybersecurity Professional */}
+                <span className="relative inline-block group cursor-default">
+                  <span className="absolute inset-0 bg-gradient-to-r from-rose-400 to-orange-500 blur-md opacity-50 bg-clip-text text-transparent group-hover:opacity-100 transition-opacity duration-500">
+                    Cybersecurity Professional
+                  </span>
+                  <span className="relative bg-gradient-to-r from-rose-300 to-orange-400 bg-clip-text text-transparent">
+                    Cybersecurity Professional
+                  </span>
+                </span>
+              </motion.div>
 
               {/* Tagline */}
               <motion.p
