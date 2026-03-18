@@ -50,7 +50,7 @@ const Navbar = () => {
             }
             className="text-lg font-bold tracking-tight"
           >
-            <span className="text-gradient-primary">RAKESH</span>
+            <span className="text-gradient-primary">R N</span>
             
           </button>
 
