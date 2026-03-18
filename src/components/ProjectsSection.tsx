@@ -27,7 +27,7 @@ const projects: Project[] = [
     title: "Sri NandiGram",
     description:
       "Premium real estate website for Mayapur with elegant UI & responsive layout.",
-    liveLink: "https://www.nandigram.site/",
+    liveLink: "https://www.nandigram.in/",
     github: "https://github.com/vladimir007usa/srinandigram-xx",
     tags: ["Real Estate", "Premium", "Web Design"],
   },
