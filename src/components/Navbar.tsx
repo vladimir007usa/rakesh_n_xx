@@ -35,9 +35,8 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? "glass-surface" : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "glass-surface" : "bg-transparent"
+          }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, delay: 1.5 }}
@@ -51,7 +50,7 @@ const Navbar = () => {
             className="text-lg font-bold tracking-tight"
           >
             <span className="text-gradient-primary">R N</span>
-            
+
           </button>
 
           {/* DESKTOP NAV */}
@@ -60,10 +59,11 @@ const Navbar = () => {
               <li key={item.label}>
                 <button
                   onClick={() => handleClick(item.href)}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 relative group"
+                  className="text-sm font-medium text-slate-300 hover:text-cyan-300 transition-all duration-300 relative group drop-shadow-[0_0_4px_rgba(34,211,238,0.2)] hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.8)]"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
+                  {/* Glowing Underline */}
+                  <span className="absolute -bottom-1.5 left-0 w-0 h-[2px] bg-cyan-400 transition-all duration-300 group-hover:w-full shadow-[0_0_8px_#22d3ee]" />
                 </button>
               </li>
             ))}
@@ -83,7 +83,7 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-zinc-950/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -92,12 +92,14 @@ const Navbar = () => {
               <motion.button
                 key={item.label}
                 onClick={() => handleClick(item.href)}
-                className="text-2xl font-light text-foreground hover:text-primary transition-colors"
+                className="relative text-3xl font-light text-slate-300 hover:text-cyan-300 transition-all duration-300 group drop-shadow-[0_0_8px_rgba(34,211,238,0.3)] hover:drop-shadow-[0_0_15px_rgba(34,211,238,0.8)]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08 }}
               >
                 {item.label}
+                {/* Glowing Underline for Mobile */}
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-cyan-400 transition-all duration-300 group-hover:w-3/4 shadow-[0_0_8px_#22d3ee]" />
               </motion.button>
             ))}
           </motion.div>
