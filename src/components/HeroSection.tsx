@@ -13,7 +13,7 @@ const HeroSection = () => {
         {/* Main content wrapper */}
         <div className="relative z-20 max-w-7xl mx-auto px-6 w-full py-20 lg:py-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-            
+
             {/* LEFT SIDE — TEXT */}
             <div className="text-center lg:text-left">
               {/* Status badge */}
@@ -103,13 +103,22 @@ const HeroSection = () => {
               <div className="relative group">
                 {/* Decorative background glow for photo */}
                 <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-500 to-purple-500 rounded-3xl opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500" />
-                
-                <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border border-white/20 bg-slate-900 shadow-2xl">
-                  <img
-  src="/profile.png"
-  alt="Rakesh Naskar"
-  className="w-full h-full object-cover transition-all duration-700" 
-/>
+
+                {/* Profile wrapper with rotating glowing line effect */}
+                <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl shadow-2xl flex items-center justify-center p-[2px] overflow-hidden group/profile bg-slate-900/50">
+                  {/* Rotating Conic Gradients for the glowing line light */}
+                  <div className="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_50%,#22d3ee_100%)] animate-[spin_4s_linear_infinite]" />
+                  <div className="absolute inset-[-100%] bg-[conic-gradient(from_270deg_at_50%_50%,transparent_0%,transparent_50%,#a855f7_100%)] animate-[spin_4s_linear_infinite]" />
+
+                  {/* Inner image container to mask the borders */}
+                  <div className="relative w-full h-full rounded-[22px] overflow-hidden bg-slate-900 z-10">
+                    <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[22px] z-20 pointer-events-none" />
+                    <img
+                      src="/profile.png"
+                      alt="Rakesh Naskar"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover/profile:scale-110"
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
