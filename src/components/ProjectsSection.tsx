@@ -35,9 +35,10 @@ const projects: Project[] = [
     title: "Nandi Sanctuary",
     description:
       "An experimental modern web experience currently in development.",
+    liveLink: "https://www.nandisanctuary.com/",
     github: "https://github.com/vladimir007usa/nandi-sanctuary",
-    tags: ["Ongoing", "Web App"],
-    status: "In Development",
+    tags: ["Sanctuary", "Web App"],
+    
   },
 ];
 
