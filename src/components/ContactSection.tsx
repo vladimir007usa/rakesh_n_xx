@@ -103,13 +103,13 @@ const ContactSection = () => {
 
           {/* LEFT — CONTACT INFO CARD */}
           <ScrollReveal delay={0.1}>
-            <div className="glass-surface rounded-2xl p-8 h-full flex flex-col gap-8 border border-white/10 hover:border-cyan-400/30 transition-colors duration-500">
+            <div className="glass-surface rounded-2xl p-5 flex flex-col gap-5 border border-white/10 hover:border-cyan-400/30 transition-colors duration-500">
 
               {/* Header */}
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Contact Info</h3>
-                <p className="text-sm text-slate-400">
-                  Reach out via any of these channels — I'm always open to new opportunities and conversations.
+                <h3 className="text-base font-bold text-white mb-1">Contact Info</h3>
+                <p className="text-xs text-slate-400">
+                  Reach out via any of these channels — I'm always open to new opportunities.
                 </p>
               </div>
 
@@ -119,39 +119,39 @@ const ContactSection = () => {
                 {/* Email */}
                 <a
                   href="mailto:rakeshjames009@gmail.com"
-                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all duration-300"
+                  className="group flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/20 group-hover:border-cyan-400/50 transition-all duration-300 shrink-0">
-                    <Mail className="w-5 h-5 text-cyan-400" />
+                  <div className="w-8 h-8 rounded-lg bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/20 group-hover:border-cyan-400/50 transition-all duration-300 shrink-0">
+                    <Mail className="w-4 h-4 text-cyan-400" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">Email</p>
-                    <p className="text-sm font-medium text-slate-200 group-hover:text-cyan-300 transition-colors truncate">
+                    <p className="text-[9px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">Email</p>
+                    <p className="text-xs font-medium text-slate-200 group-hover:text-cyan-300 transition-colors truncate">
                       rakeshjames009@gmail.com
                     </p>
                   </div>
-                  <ExternalLink className="w-3.5 h-3.5 text-slate-600 group-hover:text-cyan-400 ml-auto shrink-0 transition-colors" />
+                  <ExternalLink className="w-3 h-3 text-slate-600 group-hover:text-cyan-400 ml-auto shrink-0 transition-colors" />
                 </a>
 
                 {/* LinkedIn — Coming Soon */}
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 opacity-50 cursor-not-allowed">
-                  <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
-                    <Linkedin className="w-5 h-5 text-blue-400" />
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 opacity-50 cursor-not-allowed">
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
+                    <Linkedin className="w-4 h-4 text-blue-400" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">LinkedIn</p>
-                    <p className="text-sm font-medium text-slate-500 truncate">Coming soon…</p>
+                    <p className="text-[9px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">LinkedIn</p>
+                    <p className="text-xs font-medium text-slate-500 truncate">Coming soon…</p>
                   </div>
                 </div>
 
                 {/* Twitter — Coming Soon */}
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 opacity-50 cursor-not-allowed">
-                  <div className="w-10 h-10 rounded-lg bg-sky-400/10 border border-sky-400/20 flex items-center justify-center shrink-0">
-                    <Twitter className="w-5 h-5 text-sky-400" />
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 opacity-50 cursor-not-allowed">
+                  <div className="w-8 h-8 rounded-lg bg-sky-400/10 border border-sky-400/20 flex items-center justify-center shrink-0">
+                    <Twitter className="w-4 h-4 text-sky-400" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">Twitter / X</p>
-                    <p className="text-sm font-medium text-slate-500 truncate">Coming soon…</p>
+                    <p className="text-[9px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">Twitter / X</p>
+                    <p className="text-xs font-medium text-slate-500 truncate">Coming soon…</p>
                   </div>
                 </div>
 
@@ -160,25 +160,25 @@ const ContactSection = () => {
                   href="https://github.com/vladimir007usa"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/5 transition-all duration-300"
+                  className="group flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/5 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-purple-400/10 border border-purple-400/20 flex items-center justify-center group-hover:bg-purple-400/20 group-hover:border-purple-400/50 transition-all duration-300 shrink-0">
-                    <Github className="w-5 h-5 text-purple-400" />
+                  <div className="w-8 h-8 rounded-lg bg-purple-400/10 border border-purple-400/20 flex items-center justify-center group-hover:bg-purple-400/20 group-hover:border-purple-400/50 transition-all duration-300 shrink-0">
+                    <Github className="w-4 h-4 text-purple-400" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">GitHub</p>
-                    <p className="text-sm font-medium text-slate-200 group-hover:text-purple-300 transition-colors truncate">
+                    <p className="text-[9px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">GitHub</p>
+                    <p className="text-xs font-medium text-slate-200 group-hover:text-purple-300 transition-colors truncate">
                       github.com/vladimir007usa
                     </p>
                   </div>
-                  <ExternalLink className="w-3.5 h-3.5 text-slate-600 group-hover:text-purple-400 ml-auto shrink-0 transition-colors" />
+                  <ExternalLink className="w-3 h-3 text-slate-600 group-hover:text-purple-400 ml-auto shrink-0 transition-colors" />
                 </a>
               </div>
 
               {/* Availability badge */}
-              <div className="mt-auto flex items-center gap-2 px-4 py-3 rounded-xl bg-green-500/5 border border-green-500/20">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_#4ade80] shrink-0" />
-                <p className="text-xs font-mono text-green-400">Available for freelance & full-time roles</p>
+              <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-green-500/5 border border-green-500/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse shadow-[0_0_6px_#4ade80] shrink-0" />
+                <p className="text-[10px] font-mono text-green-400">Available for freelance & full-time roles</p>
               </div>
 
             </div>
