@@ -9,6 +9,7 @@ import ProjectsSection from '@/components/ProjectsSection';
 import EducationSection from '@/components/EducationSection';
 import ContactSection from '@/components/ContactSection';
 import FooterSection from '@/components/FooterSection';
+import CVButton from '@/components/CVButton';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +33,7 @@ const Index = () => {
       >
         <CustomCursor />
         <Navbar />
+        <CVButton />
 
         <main>
           <HeroSection />
