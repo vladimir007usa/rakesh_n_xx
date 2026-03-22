@@ -9,12 +9,12 @@ const AnimatedLoader = ({ onComplete }: { onComplete: () => void }) => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setTimeout(onComplete, 400);
+          setTimeout(onComplete, 300);
           return 100;
         }
-        return prev + Math.random() * 15 + 5;
+        return prev + Math.random() * 25 + 10; // faster: was 15+5
       });
-    }, 100);
+    }, 80); // faster: was 100ms
 
     return () => clearInterval(interval);
   }, [onComplete]);

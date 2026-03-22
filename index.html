@@ -15,13 +15,15 @@
     <meta name="twitter:title" content="Rakesh Naskar — Portfolio" />
     <meta name="twitter:description" content="Web Developer, Visual Designer & Cybersecurity Professional" />
 
-    <!-- Preconnect for Google Fonts (non-render-blocking) -->
+    <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <!-- Non-render-blocking async font loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" /></noscript>
 
     <!-- Preload LCP hero image -->
-    <link rel="preload" href="/profile.png" as="image" />
+    <link rel="preload" href="/profile.webp" as="image" fetchpriority="high" type="image/webp" />
   </head>
 
   <body>

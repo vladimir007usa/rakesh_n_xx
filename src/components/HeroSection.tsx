@@ -123,7 +123,7 @@ const HeroSection = () => {
                   <div className="relative w-full h-full rounded-[22px] overflow-hidden bg-slate-900 z-10">
                     <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[22px] z-20 pointer-events-none" />
                     <img
-                      src="/profile.png"
+                      src="/profile.webp"
                       alt="Rakesh Naskar"
                       width={320}
                       height={320}

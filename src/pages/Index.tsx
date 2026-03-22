@@ -19,29 +19,30 @@ const Index = () => {
 
   return (
     <>
+      {/* Loader overlays but content is ALWAYS in DOM for Lighthouse/crawlers */}
       <AnimatedLoader onComplete={handleLoaderComplete} />
 
-      {!isLoading && (
-        <>
-          <CustomCursor />
-          <Navbar />
+      {/* Content always rendered — just hidden while loading to prevent flash */}
+      <div
+        style={{
+          opacity: isLoading ? 0 : 1,
+          transition: 'opacity 0.4s ease',
+          pointerEvents: isLoading ? 'none' : 'auto',
+        }}
+      >
+        <CustomCursor />
+        <Navbar />
 
-          <main>
-            <HeroSection />
-            <AboutSection />
-
-            {/* 🔥 PROJECTS moved UP */}
-            <ProjectsSection />
-
-            {/* 🔥 SKILLS moved DOWN */}
-            <SkillsSection />
-
-            <EducationSection />
-            <ContactSection />
-            <FooterSection />
-          </main>
-        </>
-      )}
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <EducationSection />
+          <ContactSection />
+          <FooterSection />
+        </main>
+      </div>
     </>
   );
 };
