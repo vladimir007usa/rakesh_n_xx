@@ -23,12 +23,16 @@ const Navbar = () => {
   const handleClick = (href: string) => {
     setMobileOpen(false);
 
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    if ((window as any).lenis) {
+      (window as any).lenis.scrollTo(href, { offset: -80 }); // adjust offset for navbar
+    } else {
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     }
   };
 
