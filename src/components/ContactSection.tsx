@@ -99,7 +99,7 @@ const ContactSection = () => {
         </ScrollReveal>
 
         {/* TWO-COLUMN LAYOUT */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 items-start">
 
           {/* LEFT — CONTACT INFO CARD */}
           <ScrollReveal delay={0.1}>
