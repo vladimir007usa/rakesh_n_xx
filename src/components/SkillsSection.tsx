@@ -107,23 +107,23 @@ const SkillsSection = () => {
         {/* STACK */}
         <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
           {techStack.map((tech, i) => (
-            <ScrollReveal key={tech.name} delay={i * 0.01}>
-              <div
-                className="flex items-center gap-2 sm:gap-3 px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl
-                bg-black/60 border border-white/10 backdrop-blur-xl
-                hover:border-cyan-400/60 hover:bg-black/80
-                transition-all duration-300 group shadow-lg"
-              >
-                <tech.icon
-                  className={`text-xl sm:text-2xl ${tech.color}
-                  group-hover:scale-110 transition-transform`}
-                />
+            <div
+              key={tech.name}
+              className="flex items-center gap-2 sm:gap-3 px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl
+              bg-black/60 border border-white/10 backdrop-blur-xl
+              hover:border-cyan-400/60 hover:bg-black/80
+              transition-all duration-300 group shadow-lg"
+              style={{ transitionDelay: `${i * 15}ms` }}
+            >
+              <tech.icon
+                className={`text-xl sm:text-2xl ${tech.color}
+                group-hover:scale-110 transition-transform`}
+              />
 
-                <span className="text-xs sm:text-sm text-gray-200 group-hover:text-white font-medium tracking-wide whitespace-nowrap">
-                  {tech.name}
-                </span>
-              </div>
-            </ScrollReveal>
+              <span className="text-xs sm:text-sm text-gray-200 group-hover:text-white font-medium tracking-wide whitespace-nowrap">
+                {tech.name}
+              </span>
+            </div>
           ))}
         </div>
       </div>

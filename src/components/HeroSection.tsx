@@ -125,6 +125,10 @@ const HeroSection = () => {
                     <img
                       src="/profile.png"
                       alt="Rakesh Naskar"
+                      width={320}
+                      height={320}
+                      fetchPriority="high"
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover/profile:scale-110"
                     />
                   </div>

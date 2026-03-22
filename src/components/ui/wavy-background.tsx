@@ -44,15 +44,25 @@ export const WavyBackground = ({
     ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
+    // Use half-resolution for performance (still looks great with blur)
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    w = canvas.width = window.innerWidth * dpr;
+    h = canvas.height = window.innerHeight * dpr;
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+    ctx.scale(dpr, dpr);
     ctx.filter = `blur(${blur}px)`;
 
-    window.onresize = () => {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
+    const handleResize = () => {
+      const dpr2 = Math.min(window.devicePixelRatio || 1, 1.5);
+      w = canvas.width = window.innerWidth * dpr2;
+      h = canvas.height = window.innerHeight * dpr2;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx!.scale(dpr2, dpr2);
       ctx!.filter = `blur(${blur}px)`;
     };
+    window.addEventListener('resize', handleResize);
 
     render();
   };

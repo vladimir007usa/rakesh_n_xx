@@ -8,6 +8,7 @@ import { BackgroundLines } from "@/components/ui/background-lines";
 interface Project {
   title: string;
   description: string;
+  image: string;
   liveLink?: string;
   github: string;
   tags: string[];
@@ -19,6 +20,7 @@ const projects: Project[] = [
     title: "DesignForge",
     description:
       "A design marketplace platform for storing and selling design templates.",
+    image: "https://image.thum.io/get/width/800/crop/600/https://designforge-zeta.vercel.app/",
     liveLink: "https://designforge-zeta.vercel.app/",
     github: "https://github.com/vladimir007usa/designforge",
     tags: ["Marketplace", "Full-Stack", "Design"],
@@ -27,6 +29,7 @@ const projects: Project[] = [
     title: "Sri NandiGram",
     description:
       "Premium real estate website for Mayapur with elegant UI & responsive layout.",
+    image: "https://image.thum.io/get/width/800/crop/600/https://www.nandigram.in/",
     liveLink: "https://www.nandigram.in/",
     github: "https://github.com/vladimir007usa/srinandigram-xx",
     tags: ["Real Estate", "Premium", "Web Design"],
@@ -35,10 +38,10 @@ const projects: Project[] = [
     title: "Nandi Sanctuary",
     description:
       "An experimental modern web experience currently in development.",
+    image: "https://image.thum.io/get/width/800/crop/600/https://www.nandisanctuary.com/",
     liveLink: "https://www.nandisanctuary.com/",
     github: "https://github.com/vladimir007usa/nandi_sancturyxx",
     tags: ["Sanctuary", "Web App"],
-    
   },
 ];
 
@@ -72,9 +75,25 @@ const ProjectsSection = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, i) => (
               <ScrollReveal key={project.title} delay={i * 0.1}>
-                <GlowCard className="h-full group border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400/50 transition-all duration-500">
+                <GlowCard className="h-full group border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400/50 transition-all duration-500 overflow-hidden rounded-2xl flex flex-col">
 
-                  <div className="p-8 flex flex-col h-full">
+                  {/* PROJECT IMAGE COVER */}
+                  <div className="relative w-full h-48 overflow-hidden group border-b border-white/5">
+                    {/* Hover Glow Effect layer */}
+                    <div className="absolute inset-0 z-10 bg-cyan-400/0 group-hover:bg-cyan-400/10 transition-colors duration-500 pointer-events-none" />
+                    
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      width={800}
+                      height={600}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                    />
+                  </div>
+
+                  <div className="p-8 flex flex-col flex-1">
 
                     {/* HEADER */}
                     <div className="flex items-start justify-between mb-6">
@@ -96,7 +115,7 @@ const ProjectsSection = () => {
                             href={project.liveLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="icon-btn"
+                            className="icon-btn z-20 relative"
                           >
                             <ExternalLink className="w-4 h-4" />
                           </a>
@@ -106,7 +125,7 @@ const ProjectsSection = () => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="icon-btn"
+                          className="icon-btn z-20 relative"
                         >
                           <Github className="w-4 h-4" />
                         </a>
@@ -119,7 +138,7 @@ const ProjectsSection = () => {
                     </p>
 
                     {/* TAGS */}
-                    <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10 mt-auto">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
