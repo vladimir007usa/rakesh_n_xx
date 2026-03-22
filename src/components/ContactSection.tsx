@@ -4,7 +4,7 @@ import ScrollReveal from './ScrollReveal';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { Mail, Send, CheckCircle } from 'lucide-react';
+import { Mail, Send, CheckCircle, Linkedin, Twitter, Github, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
@@ -82,7 +82,7 @@ const ContactSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <ScrollReveal>
           <div className="text-center mb-12">
             <p className="text-xs font-mono text-primary tracking-widest uppercase mb-3">
@@ -98,11 +98,97 @@ const ContactSection = () => {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.15}>
-          <div className="max-w-xl mx-auto">
+        {/* TWO-COLUMN LAYOUT */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+          {/* LEFT — CONTACT INFO CARD */}
+          <ScrollReveal delay={0.1}>
+            <div className="glass-surface rounded-2xl p-8 h-full flex flex-col gap-8 border border-white/10 hover:border-cyan-400/30 transition-colors duration-500">
+
+              {/* Header */}
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">Contact Info</h3>
+                <p className="text-sm text-slate-400">
+                  Reach out via any of these channels — I'm always open to new opportunities and conversations.
+                </p>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex flex-col gap-4">
+
+                {/* Email */}
+                <a
+                  href="mailto:rakeshjames009@gmail.com"
+                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all duration-300"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/20 group-hover:border-cyan-400/50 transition-all duration-300 shrink-0">
+                    <Mail className="w-5 h-5 text-cyan-400" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">Email</p>
+                    <p className="text-sm font-medium text-slate-200 group-hover:text-cyan-300 transition-colors truncate">
+                      rakeshjames009@gmail.com
+                    </p>
+                  </div>
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-600 group-hover:text-cyan-400 ml-auto shrink-0 transition-colors" />
+                </a>
+
+                {/* LinkedIn — Coming Soon */}
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 opacity-50 cursor-not-allowed">
+                  <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0">
+                    <Linkedin className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">LinkedIn</p>
+                    <p className="text-sm font-medium text-slate-500 truncate">Coming soon…</p>
+                  </div>
+                </div>
+
+                {/* Twitter — Coming Soon */}
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 opacity-50 cursor-not-allowed">
+                  <div className="w-10 h-10 rounded-lg bg-sky-400/10 border border-sky-400/20 flex items-center justify-center shrink-0">
+                    <Twitter className="w-5 h-5 text-sky-400" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">Twitter / X</p>
+                    <p className="text-sm font-medium text-slate-500 truncate">Coming soon…</p>
+                  </div>
+                </div>
+
+                {/* GitHub */}
+                <a
+                  href="https://github.com/vladimir007usa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/5 transition-all duration-300"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-purple-400/10 border border-purple-400/20 flex items-center justify-center group-hover:bg-purple-400/20 group-hover:border-purple-400/50 transition-all duration-300 shrink-0">
+                    <Github className="w-5 h-5 text-purple-400" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">GitHub</p>
+                    <p className="text-sm font-medium text-slate-200 group-hover:text-purple-300 transition-colors truncate">
+                      github.com/vladimir007usa
+                    </p>
+                  </div>
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-600 group-hover:text-purple-400 ml-auto shrink-0 transition-colors" />
+                </a>
+              </div>
+
+              {/* Availability badge */}
+              <div className="mt-auto flex items-center gap-2 px-4 py-3 rounded-xl bg-green-500/5 border border-green-500/20">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_#4ade80] shrink-0" />
+                <p className="text-xs font-mono text-green-400">Available for freelance & full-time roles</p>
+              </div>
+
+            </div>
+          </ScrollReveal>
+
+          {/* RIGHT — MESSAGE FORM */}
+          <ScrollReveal delay={0.2}>
             <form
               onSubmit={handleSubmit}
-              className="glass-surface rounded-2xl p-6 sm:p-8 space-y-5"
+              className="glass-surface rounded-2xl p-6 sm:p-8 space-y-5 border border-white/10 hover:border-cyan-400/20 transition-colors duration-500"
             >
               {/* Name & Email row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -190,7 +276,7 @@ const ContactSection = () => {
                   id="message"
                   name="message"
                   placeholder="Tell me about your project or just say hi…"
-                  rows={5}
+                  rows={6}
                   value={formData.message}
                   onChange={handleChange}
                   className={cn(
@@ -231,11 +317,13 @@ const ContactSection = () => {
                 )}
               </Button>
             </form>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+
+        </div>
       </div>
     </section>
   );
 };
 
 export default ContactSection;
+
