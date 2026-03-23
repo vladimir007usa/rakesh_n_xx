@@ -20,7 +20,7 @@ const projects: Project[] = [
     title: "Mayapur Crafts Pvt Ltd",
     description:
       "E-commerce platform for authentic handcrafted goods from Mayapur — featuring curated product listings, a smooth shopping experience, and a clean modern UI. Currently under active development.",
-    image: "https://image.thum.io/get/width/800/crop/600/https://mayapurcrafts-xx.vercel.app/",
+    image: "https://image.thum.io/get/width/1000/crop/800/https://mayapurcrafts-xx.vercel.app/",
     liveLink: "https://mayapurcrafts-xx.vercel.app/",
     github: "https://github.com/vladimir007usa/mayapurcrafts_xx",
     tags: ["E-Commerce", "Ongoing", "Handcrafts"],
@@ -30,7 +30,7 @@ const projects: Project[] = [
     title: "DesignForge",
     description:
       "A design marketplace platform for storing and selling design templates.",
-    image: "https://image.thum.io/get/width/800/crop/600/https://designforge-zeta.vercel.app/",
+    image: "https://image.thum.io/get/width/1000/crop/800/https://designforge-zeta.vercel.app/",
     liveLink: "https://designforge-zeta.vercel.app/",
     github: "https://github.com/vladimir007usa/designforge",
     tags: ["Marketplace", "Full-Stack", "Design"],
@@ -39,7 +39,7 @@ const projects: Project[] = [
     title: "Sri NandiGram",
     description:
       "Premium real estate website for Mayapur with elegant UI & responsive layout.",
-    image: "https://image.thum.io/get/width/800/crop/600/https://www.nandigram.in/",
+    image: "https://image.thum.io/get/width/1000/crop/800/https://www.nandigram.in/",
     liveLink: "https://www.nandigram.in/",
     github: "https://github.com/vladimir007usa/srinandigram-xx",
     tags: ["Real Estate", "Premium", "Web Design"],
@@ -48,7 +48,7 @@ const projects: Project[] = [
     title: "Nandi Sanctuary",
     description:
       "An experimental modern web experience currently in development.",
-    image: "https://image.thum.io/get/width/800/crop/600/https://www.nandisanctuary.com/",
+    image: "https://image.thum.io/get/width/1000/crop/800/https://www.nandisanctuary.com/",
     liveLink: "https://www.nandisanctuary.com/",
     github: "https://github.com/vladimir007usa/nandi_sancturyxx",
     tags: ["Sanctuary", "Web App"],
@@ -87,7 +87,7 @@ const ProjectsSection = () => {
               <ScrollReveal key={project.title} delay={i * 0.1}>
                 <GlowCard 
                   alwaysShowElectric={true}
-                  className="h-[420px] group border-white/10 bg-zinc-900 overflow-hidden rounded-2xl relative"
+                  className="h-[500px] group border-white/10 bg-zinc-900 overflow-hidden rounded-2xl relative"
                 >
                   {/* BACKGROUND IMAGE WITH OVERLAY */}
                   <div className="absolute inset-0 z-0">
@@ -100,9 +100,8 @@ const ProjectsSection = () => {
                       decoding="async"
                       className="w-full h-full object-cover object-top transition-transform duration-700 ease-in-out group-hover:scale-110"
                     />
-                    {/* Dark Gradients for Readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+                    {/* Subtler Gradient - clear at top, dark at bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                   </div>
 
                   {/* CONTENT OVERLAY */}
