@@ -87,14 +87,10 @@ const ProjectsSection = () => {
               <ScrollReveal key={project.title} delay={i * 0.1}>
                 <GlowCard 
                   alwaysShowElectric={true}
-                  className="h-full group border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400/50 transition-all duration-500 overflow-hidden rounded-2xl flex flex-col"
+                  className="h-[420px] group border-white/10 bg-zinc-900 overflow-hidden rounded-2xl relative"
                 >
-
-                  {/* PROJECT IMAGE COVER */}
-                  <div className="relative w-full h-48 overflow-hidden group border-b border-white/5">
-                    {/* Hover Glow Effect layer */}
-                    <div className="absolute inset-0 z-10 bg-cyan-400/0 group-hover:bg-cyan-400/10 transition-colors duration-500 pointer-events-none" />
-                    
+                  {/* BACKGROUND IMAGE WITH OVERLAY */}
+                  <div className="absolute inset-0 z-0">
                     <img 
                       src={project.image} 
                       alt={project.title}
@@ -102,44 +98,47 @@ const ProjectsSection = () => {
                       height={600}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 ease-in-out group-hover:scale-110"
                     />
+                    {/* Dark Gradients for Readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
                   </div>
 
-                  <div className="p-8 flex flex-col flex-1">
-
-                    {/* HEADER */}
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="space-y-2">
-                        <h3 className="font-bold text-xl text-white group-hover:text-cyan-400 transition-colors">
-                          {project.title}
-                        </h3>
-
+                  {/* CONTENT OVERLAY */}
+                  <div className="relative z-10 h-full p-6 flex flex-col justify-end">
+                    
+                    {/* TOP ACTIONS & BADGES */}
+                    <div className="absolute top-6 left-6 right-6 flex items-start justify-between">
+                      <div className="flex flex-wrap gap-2">
+                        <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-bold text-emerald-400 uppercase tracking-wider backdrop-blur-md">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                          Live
+                        </span>
                         {project.status && (
-                          <span className="text-[10px] font-mono text-cyan-400 px-2 py-0.5 rounded-full bg-cyan-400/10 border border-cyan-400/30">
+                          <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[10px] font-bold text-cyan-400 uppercase tracking-wider backdrop-blur-md">
                             {project.status}
                           </span>
                         )}
                       </div>
 
-                      <div className="flex gap-3">
+                      <div className="flex gap-2">
                         {project.liveLink && (
                           <a
                             href={project.liveLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="icon-btn z-20 relative"
+                            className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 border border-white/10 text-white backdrop-blur-md hover:bg-white hover:text-black transition-all duration-300"
                             aria-label={`View live site for ${project.title}`}
                           >
                             <ExternalLink className="w-4 h-4" />
                           </a>
                         )}
-
                         <a
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="icon-btn z-20 relative"
+                          className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 border border-white/10 text-white backdrop-blur-md hover:bg-white hover:text-black transition-all duration-300"
                           aria-label={`View GitHub repository for ${project.title}`}
                         >
                           <Github className="w-4 h-4" />
@@ -147,21 +146,29 @@ const ProjectsSection = () => {
                       </div>
                     </div>
 
-                    {/* DESCRIPTION */}
-                    <p className="text-sm text-slate-400 mb-8 flex-1 group-hover:text-slate-300 transition-colors">
-                      {project.description}
-                    </p>
+                    {/* MAIN INFO */}
+                    <div className="space-y-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                          {project.title}
+                        </h3>
+                      </div>
 
-                    {/* TAGS */}
-                    <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10 mt-auto">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-md bg-white/5 text-slate-400 border border-white/10 group-hover:border-cyan-400/40 group-hover:text-cyan-400 transition-all"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                      <p className="text-sm text-slate-300 line-clamp-3 group-hover:text-white transition-colors duration-300 leading-relaxed">
+                        {project.description}
+                      </p>
+
+                      {/* TECH TAGS */}
+                      <div className="flex flex-wrap gap-2 pt-2 cursor-default">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-white/5 text-slate-400 border border-white/5 transition-all duration-300 group-hover:border-cyan-400/30 group-hover:text-cyan-300"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
 
                   </div>
