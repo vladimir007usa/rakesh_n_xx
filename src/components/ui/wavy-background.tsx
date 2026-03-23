@@ -56,6 +56,7 @@ export const WavyBackground = ({
     window.addEventListener('resize', handleResize);
 
     render();
+    return handleResize;
   };
 
   const waveColors = colors ?? [
@@ -92,8 +93,11 @@ export const WavyBackground = ({
   };
 
   useEffect(() => {
-    init();
-    return () => cancelAnimationFrame(animationId);
+    const handleResize = init();
+    return () => {
+      cancelAnimationFrame(animationId);
+      if (handleResize) window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const [isSafari, setIsSafari] = useState(false);

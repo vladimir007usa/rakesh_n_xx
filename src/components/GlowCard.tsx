@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import ElectricBorder from './ui/ElectricBorder';
 
 interface GlowCardProps {
   children: React.ReactNode;
@@ -52,7 +53,10 @@ const GlowCard = ({ children, className = '' }: GlowCardProps) => {
           }}
         />
       )}
-      <div className="relative z-10">{children}</div>
+      {/* Electric Border Animation on Hover */}
+      <ElectricBorder isVisible={isHovered} />
+
+      <div className="relative z-10 h-full flex flex-col">{children}</div>
     </motion.div>
   );
 };

@@ -120,6 +120,7 @@ const ContactSection = () => {
                 <a
                   href="mailto:rakeshjames009@gmail.com"
                   className="group flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all duration-300"
+                  aria-label="Send an email to Rakesh James"
                 >
                   <div className="w-8 h-8 rounded-lg bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/20 group-hover:border-cyan-400/50 transition-all duration-300 shrink-0">
                     <Mail className="w-4 h-4 text-cyan-400" />
@@ -161,6 +162,7 @@ const ContactSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/5 transition-all duration-300"
+                  aria-label="Visit Rakesh's GitHub profile"
                 >
                   <div className="w-8 h-8 rounded-lg bg-purple-400/10 border border-purple-400/20 flex items-center justify-center group-hover:bg-purple-400/20 group-hover:border-purple-400/50 transition-all duration-300 shrink-0">
                     <Github className="w-4 h-4 text-purple-400" />

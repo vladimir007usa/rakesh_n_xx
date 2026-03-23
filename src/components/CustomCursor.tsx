@@ -14,41 +14,24 @@ const CustomCursor = () => {
     const handleMouseMove = (e: MouseEvent) => {
       setPos({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
+      
+      // Use event delegation for hover state - much more performant!
+      const target = e.target as HTMLElement;
+      const isHoverable = !!target.closest('a, button, [role="button"], input, textarea, select, .hoverable');
+      setIsHovering(isHoverable);
     };
 
     const handleMouseEnter = () => setIsVisible(true);
     const handleMouseLeave = () => setIsVisible(false);
 
-    const handleHoverStart = () => setIsHovering(true);
-    const handleHoverEnd = () => setIsHovering(false);
-
     window.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseenter', handleMouseEnter);
     document.addEventListener('mouseleave', handleMouseLeave);
-
-    // Track hoverable elements
-    const observer = new MutationObserver(() => {
-      const hoverables = document.querySelectorAll('a, button, [role="button"], input, textarea, select, .hoverable');
-      hoverables.forEach((el) => {
-        el.addEventListener('mouseenter', handleHoverStart);
-        el.addEventListener('mouseleave', handleHoverEnd);
-      });
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    // Initial setup
-    const hoverables = document.querySelectorAll('a, button, [role="button"], input, textarea, select, .hoverable');
-    hoverables.forEach((el) => {
-      el.addEventListener('mouseenter', handleHoverStart);
-      el.addEventListener('mouseleave', handleHoverEnd);
-    });
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseenter', handleMouseEnter);
       document.removeEventListener('mouseleave', handleMouseLeave);
-      observer.disconnect();
     };
   }, []);
 

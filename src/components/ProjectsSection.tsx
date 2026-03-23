@@ -126,6 +126,7 @@ const ProjectsSection = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="icon-btn z-20 relative"
+                            aria-label={`View live site for ${project.title}`}
                           >
                             <ExternalLink className="w-4 h-4" />
                           </a>
@@ -136,6 +137,7 @@ const ProjectsSection = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="icon-btn z-20 relative"
+                          aria-label={`View GitHub repository for ${project.title}`}
                         >
                           <Github className="w-4 h-4" />
                         </a>
