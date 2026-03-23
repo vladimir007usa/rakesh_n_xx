@@ -85,7 +85,10 @@ const ProjectsSection = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, i) => (
               <ScrollReveal key={project.title} delay={i * 0.1}>
-                <GlowCard className="h-full group border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400/50 transition-all duration-500 overflow-hidden rounded-2xl flex flex-col">
+                <GlowCard 
+                  alwaysShowElectric={true}
+                  className="h-full group border-white/10 bg-white/5 backdrop-blur-xl hover:border-cyan-400/50 transition-all duration-500 overflow-hidden rounded-2xl flex flex-col"
+                >
 
                   {/* PROJECT IMAGE COVER */}
                   <div className="relative w-full h-48 overflow-hidden group border-b border-white/5">

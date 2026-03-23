@@ -5,9 +5,10 @@ import ElectricBorder from './ui/ElectricBorder';
 interface GlowCardProps {
   children: React.ReactNode;
   className?: string;
+  alwaysShowElectric?: boolean;
 }
 
-const GlowCard = ({ children, className = '' }: GlowCardProps) => {
+const GlowCard = ({ children, className = '', alwaysShowElectric = false }: GlowCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -53,8 +54,8 @@ const GlowCard = ({ children, className = '' }: GlowCardProps) => {
           }}
         />
       )}
-      {/* Electric Border Animation on Hover */}
-      <ElectricBorder isVisible={isHovered} />
+      {/* Electric Border Animation */}
+      <ElectricBorder isVisible={alwaysShowElectric || isHovered} />
 
       <div className="relative z-10 h-full flex flex-col">{children}</div>
     </motion.div>
