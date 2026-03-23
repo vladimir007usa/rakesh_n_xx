@@ -17,6 +17,16 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Mayapur Crafts Pvt Ltd",
+    description:
+      "E-commerce platform for authentic handcrafted goods from Mayapur — featuring curated product listings, a smooth shopping experience, and a clean modern UI. Currently under active development.",
+    image: "https://image.thum.io/get/width/800/crop/600/https://mayapurcrafts-xx.vercel.app/",
+    liveLink: "https://mayapurcrafts-xx.vercel.app/",
+    github: "https://github.com/vladimir007usa/mayapurcrafts_xx",
+    tags: ["E-Commerce", "Ongoing", "Handcrafts"],
+    status: "Ongoing",
+  },
+  {
     title: "DesignForge",
     description:
       "A design marketplace platform for storing and selling design templates.",
