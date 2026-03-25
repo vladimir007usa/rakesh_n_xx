@@ -19,7 +19,7 @@ const educationData: Education[] = [
     id: "btech-cse",
     degree: "B.Tech in Computer Science & Engineering",
     institution: "Greater Kolkata College of Engineering and Management",
-    period: "2022 – Present",
+    period: "2022 – 2026",
   },
   {
     id: "hs-school",
