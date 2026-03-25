@@ -17,6 +17,24 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Sri NandiGram",
+    description:
+      "Premium real estate website for Mayapur with elegant UI & responsive layout.",
+    image: "https://image.thum.io/get/width/1000/crop/800/https://www.nandigram.in/",
+    liveLink: "https://www.nandigram.in/",
+    github: "https://github.com/vladimir007usa/srinandigram-xx",
+    tags: ["Real Estate", "Premium", "Web Design"],
+  },
+  {
+    title: "Nandi Sanctuary",
+    description:
+      "An experimental modern web experience currently in development.",
+    image: "https://image.thum.io/get/width/1000/crop/800/https://www.nandisanctuary.com/",
+    liveLink: "https://www.nandisanctuary.com/",
+    github: "https://github.com/vladimir007usa/nandi_sancturyxx",
+    tags: ["Sanctuary", "Web App"],
+  },
+  {
     title: "Mayapur Crafts Pvt Ltd",
     description:
       "E-commerce platform for authentic handcrafted goods from Mayapur — featuring curated product listings, a smooth shopping experience, and a clean modern UI. Currently under active development.",
@@ -34,24 +52,6 @@ const projects: Project[] = [
     liveLink: "https://designforge-zeta.vercel.app/",
     github: "https://github.com/vladimir007usa/designforge",
     tags: ["Marketplace", "Full-Stack", "Design"],
-  },
-  {
-    title: "Sri NandiGram",
-    description:
-      "Premium real estate website for Mayapur with elegant UI & responsive layout.",
-    image: "https://image.thum.io/get/width/1000/crop/800/https://www.nandigram.in/",
-    liveLink: "https://www.nandigram.in/",
-    github: "https://github.com/vladimir007usa/srinandigram-xx",
-    tags: ["Real Estate", "Premium", "Web Design"],
-  },
-  {
-    title: "Nandi Sanctuary",
-    description:
-      "An experimental modern web experience currently in development.",
-    image: "https://image.thum.io/get/width/1000/crop/800/https://www.nandisanctuary.com/",
-    liveLink: "https://www.nandisanctuary.com/",
-    github: "https://github.com/vladimir007usa/nandi_sancturyxx",
-    tags: ["Sanctuary", "Web App"],
   },
 ];
 
