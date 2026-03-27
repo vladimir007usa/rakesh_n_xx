@@ -1,9 +1,4 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
-export default async function handler(
-  request: VercelRequest,
-  response: VercelResponse
-) {
+export default async function handler(request: any, response: any) {
   // Only allow POST requests
   if (request.method !== 'POST') {
     return response.status(405).json({ success: false, message: 'Method Not Allowed' });
@@ -12,11 +7,6 @@ export default async function handler(
   try {
     const body = request.body;
     
-    // Ensure access_key is present (just as a safety check, though frontend should send it)
-    if (!body.access_key) {
-      body.access_key = 'b1090997-a9d3-434c-955d-4fbf3393e247';
-    }
-
     // Forward the request to Web3Forms on the server-side
     const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -24,7 +14,11 @@ export default async function handler(
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify({
+        ...body,
+        access_key: 'b1090997-a9d3-434c-955d-4fbf3393e247',
+        from_name: 'Portfolio Contact Form'
+      }),
     });
 
     const data = await res.json();
