@@ -85,15 +85,16 @@ const ContactSection = () => {
           setIsSubmitted(false);
         }, 5000);
       } else {
-        throw new Error(data.message || 'Something went wrong');
+        // If the API returns success: false, show the message from the API
+        throw new Error(data.message || 'The server rejected the request.');
       }
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: 'Error sending message',
-        description: 'Please try again later or reach out via email directly.',
+        description: error.message || 'Please try again later or reach out via email directly.',
         variant: 'destructive',
       });
-      console.error('Contact form error:', error);
+      console.error('Contact form submission error:', error);
     } finally {
       setIsSubmitting(false);
     }
