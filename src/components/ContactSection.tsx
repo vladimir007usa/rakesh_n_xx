@@ -55,17 +55,20 @@ const ContactSection = () => {
     }
 
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append('access_key', 'b1090997-a9d3-434c-955d-4fbf3393e247');
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('subject', formData.subject);
-      formDataToSend.append('message', formData.message);
-      formDataToSend.append('from_name', 'Portfolio Contact Form');
-
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('/api/submit', {
         method: 'POST',
-        body: formDataToSend,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'b1090997-a9d3-434c-955d-4fbf3393e247',
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: 'Portfolio Contact Form',
+        }),
       });
 
       const data = await response.json();
