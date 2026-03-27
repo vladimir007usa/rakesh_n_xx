@@ -54,20 +54,49 @@ const ContactSection = () => {
       return;
     }
 
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'b1090997-a9d3-434c-955d-4fbf3393e247',
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: 'Portfolio Contact Form',
+        }),
+      });
 
-    setIsSubmitted(true);
-    setIsSubmitting(false);
-    toast({
-      title: 'Message sent!',
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
+      const data = await response.json();
 
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
+      if (data.success) {
+        setIsSubmitted(true);
+        toast({
+          title: 'Message sent!',
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        throw new Error(data.message || 'Something went wrong');
+      }
+    } catch (error) {
+      toast({
+        title: 'Error sending message',
+        description: 'Please try again later or reach out via email directly.',
+        variant: 'destructive',
+      });
+      console.error('Contact form error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
