@@ -86,9 +86,12 @@ const ContactSection = () => {
         throw new Error(data.message || 'The server rejected the request.');
       }
     } catch (error: any) {
+      const isFetchError = error.message === 'Failed to fetch';
       toast({
         title: 'Error sending message',
-        description: error.message || 'Please try again later or reach out via email directly.',
+        description: isFetchError 
+          ? 'Network error or Ad-Blocker detected. Please disable Ad-Blockers and try again, or email me directly.' 
+          : (error.message || 'Please try again later.'),
         variant: 'destructive',
       });
       console.error('Contact form submission error:', error);
@@ -145,9 +148,9 @@ const ContactSection = () => {
 
                 {/* Email */}
                 <a
-                  href="mailto:rakeshjames009@gmail.com"
+                  href="mailto:brynancranston1956@gmail.com"
                   className="group flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all duration-300"
-                  aria-label="Send an email to Rakesh James"
+                  aria-label="Send an email"
                 >
                   <div className="w-8 h-8 rounded-lg bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/20 group-hover:border-cyan-400/50 transition-all duration-300 shrink-0">
                     <Mail className="w-4 h-4 text-cyan-400" />
@@ -155,7 +158,7 @@ const ContactSection = () => {
                   <div className="min-w-0">
                     <p className="text-[9px] font-mono text-slate-500 uppercase tracking-wider mb-0.5">Email</p>
                     <p className="text-xs font-medium text-slate-200 group-hover:text-cyan-300 transition-colors truncate">
-                      rakeshjames009@gmail.com
+                      brynancranston1956@gmail.com
                     </p>
                   </div>
                   <ExternalLink className="w-3 h-3 text-slate-600 group-hover:text-cyan-400 ml-auto shrink-0 transition-colors" />
