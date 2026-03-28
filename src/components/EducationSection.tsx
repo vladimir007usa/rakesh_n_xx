@@ -31,7 +31,7 @@ const educationData: Education[] = [
   {
     id: "secondary-school",
     degree: "Secondary",
-    institution: "Canning David Sassoon High School",
+    institution: "Canning canning David Sassoon High School",
     period: "2019",
     score: "588 / 700",
   },
